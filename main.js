@@ -57,7 +57,8 @@ function renderDeck()
 		card.appendChild(value);
 		card.appendChild(suit);
 
-		document.getElementById("deck").appendChild(card);
+        document.getElementById("deck").appendChild(card);
+        document.getElementById('sol').innerHTML = "";
 	}
 }
 
@@ -167,7 +168,7 @@ var getsol_ = function() {
             }
         }
     }
-    return "No solution found.";
+    return "无解";
 }
 
 function getsol()
