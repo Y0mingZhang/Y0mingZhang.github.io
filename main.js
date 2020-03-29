@@ -184,4 +184,30 @@ function load()
 	renderDeck();
 }
 
+var handleform = function (f) {
+    let card_nums = [];
+
+    for (var i = 0; i < 4; i++) {
+        card_nums.push(card_map[deck[i].Value]);
+    }
+    card_nums.sort();
+
+    let res = eval(f.inputbox.value);
+    var numbers = f.inputbox.value.match(/\d+/g).map(Number).sort();
+
+    if (res != undefined && JSON.stringify(card_nums) == JSON.stringify(numbers)) {
+        
+        document.getElementById("feedback").innerHTML = f.inputbox.value + " = " + eval(f.inputbox.value)
+        document.getElementById("feedback").innerHTML += "<br>";
+        if (Math.abs(res - 24) < 0.01) {
+            document.getElementById("feedback").innerHTML += "正确";
+        }
+        else {
+            document.getElementById("feedback").innerHTML += "错误";
+        }
+    }
+    else {
+        alert("非法输入");
+    }
+}
 window.onload = load;
