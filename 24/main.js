@@ -168,7 +168,7 @@ var getsol_ = function() {
             }
         }
     }
-    return "无解";
+    return "No Solution";
 }
 
 function getsol()
@@ -200,14 +200,14 @@ var handleform = function (f) {
         document.getElementById("feedback").innerHTML = f.inputbox.value + " = " + eval(f.inputbox.value)
         document.getElementById("feedback").innerHTML += "<br>";
         if (Math.abs(res - 24) < 0.01) {
-            document.getElementById("feedback").innerHTML += "正确";
+            document.getElementById("feedback").innerHTML += "Correct";
         }
         else {
-            document.getElementById("feedback").innerHTML += "错误";
+            document.getElementById("feedback").innerHTML += "Incorrect";
         }
     }
     else {
-        alert("非法输入");
+        alert("Illegal Input");
     }
 }
 window.onload = load;
